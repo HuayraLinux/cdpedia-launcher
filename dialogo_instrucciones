@@ -1,0 +1,92 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#
+# Author Miguel Angel Garcia <miguel.garcia@gmail.com>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+# USA.
+import argparse
+import gtk
+import gtk.gdk
+import webkit
+import sys
+import subprocess
+
+
+def exit_app():
+    sys.exit()
+
+
+class MyHTMLWidget(webkit.WebView):
+    """
+    HTML pages browser with extra functionality.
+    """
+    def __init__(self, url):
+        webkit.WebView.__init__(self)
+        self.get_property("settings").set_property(
+            "enable-default-context-menu", False)
+        self.connect('navigation-policy-decision-requested',
+                     self._on_navigate_decision)
+        self.load_uri(url)
+
+    def _on_navigate_decision(self, view, frame, req, action, decision):
+        import re
+        parts = req.get_uri().split("://")
+        if len(parts) == 2:
+            if parts[0] == 'exec':
+                # Launch external commands
+                command = parts[1].split("%20")
+                subprocess.Popen(command, bufsize=0, executable=None,
+                                 stdin=None, stdout=None, stderr=None,
+                                 preexec_fn=None, close_fds=False, shell=False,
+                                 cwd=None, env=None, universal_newlines=False,
+                                 startupinfo=None, creationflags=0)
+                return True
+            elif parts[0] == 'app':
+                # Close app
+                if parts[1] == 'finalize':
+                    exit_app()
+                    return True
+        return False
+
+
+def build_window(url):
+    """
+    Build container window.
+    """
+    content = MyHTMLWidget(url)
+    sw = gtk.ScrolledWindow()
+    sw.add(content)
+    win = gtk.Window(gtk.WINDOW_TOPLEVEL)
+    win.add(sw)
+    win.set_resizable(False)
+    content.set_size_request(600, 600)
+    win.set_default_size(600, 600)
+    win.set_title("CDPedia")
+    win.set_position(gtk.WIN_POS_CENTER)
+    win.set_deletable(False)
+    win.connect("destroy", gtk.main_quit)
+    return win
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Muestra la ventana con \
+                                     instrucciones de instalación de CDPedia")
+    parser.add_argument('url', metavar='URL', help='page to show')
+    args = parser.parse_args()
+    win = build_window(args.url)
+    win.show_all()
+    gtk.main()

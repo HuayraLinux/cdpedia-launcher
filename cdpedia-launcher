@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Lanzador de CDPedia
+#
+# Author: Miguel Angel Garcia <miguel.garcia@gmail.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# For a copy of the GNU General Public License please see
+# <http://www.gnu.org/licenses/>.
+
+. cdpedia-launcherrc
+
+
+if [ ! -e $CDPEDIA_PATH ]
+	then
+	./dialogo_instrucciones $INSTALL_INSTRUCTIONS_HTML
+	exit 1
+fi
+
+cd $CDPEDIA_PATH
+python cdpedia.py

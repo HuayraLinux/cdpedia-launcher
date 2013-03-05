@@ -1,0 +1,6 @@
+pages /usr/share/cdpedia-launcher
+dialogo_instrucciones /usr/share/cdpedia-launcher
+cdpedia-launcher /usr/bin
+cdpedia-launcherrc /etc
+debian/cdpedia-launcher.desktop /usr/share/applications
+debian/cdpedia-launcher.png /usr/share/pixmaps

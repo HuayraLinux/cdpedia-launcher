@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=CDPedia
+Comment=La Wikipedia Offline
+Exec=/usr/bin/cdpedia-launcher
+Type=Application
+Categories=Education;
+Icon=/usr/share/pixmaps/cdpedia-launcher.png

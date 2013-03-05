@@ -1,0 +1,14 @@
+Source: cdpedia-launcher
+Section: main
+Priority: extra
+Maintainer: Miguel Angel Garcia <miguel.garcia@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Vcs-Git: git://200.55.245.7/cdpedia-launcher.git
+
+Package: cdpedia-launcher
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-webkit
+Description: Lanzador de la CDPedia
+ Dispara la CDPedia si se encuentra instalada, en caso contrario muestra un
+ mensaje con instrucciones para su instalación.
