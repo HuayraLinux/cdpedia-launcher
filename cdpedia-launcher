@@ -17,12 +17,12 @@
 # For a copy of the GNU General Public License please see
 # <http://www.gnu.org/licenses/>.
 
-. cdpedia-launcherrc
+. /etc/cdpedia-launcherrc
 
 
 if [ ! -e $CDPEDIA_PATH ]
 	then
-	./dialogo_instrucciones $INSTALL_INSTRUCTIONS_HTML
+	/usr/share/cdpedia-launcher/dialogo_instrucciones $INSTALL_INSTRUCTIONS_HTML
 	exit 1
 fi
 
