@@ -1,3 +1,9 @@
+cdpedia-launcher (1.1) testing; urgency=low
+
+  * Conflict y Replaces cdpedia
+
+ -- Miguel Angel Garcia <miguel.garcia@gmail.com>  Fri, 08 Mar 2013 14:34:04 -0300
+
 cdpedia-launcher (1.0) testing; urgency=low
 
   * Initial Release.

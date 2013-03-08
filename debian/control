@@ -9,6 +9,8 @@ Vcs-Git: git://200.55.245.7/cdpedia-launcher.git
 Package: cdpedia-launcher
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, python-webkit
+Conflicts: cdpedia, cdpedia-data
+Replaces: cdpedia, cdpedia-data
 Description: Lanzador de la CDPedia
  Dispara la CDPedia si se encuentra instalada, en caso contrario muestra un
  mensaje con instrucciones para su instalación.
