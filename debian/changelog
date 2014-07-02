@@ -1,3 +1,9 @@
+cdpedia-launcher (1.2) unstable; urgency=low
+
+  * Cambio de instrucciones para nueva versión de cdpedia
+
+ -- Miguel Angel Garcia <miguel.garcia@gmail.com>  Wed, 02 Jul 2014 16:00:57 -0300
+
 cdpedia-launcher (1.1) testing; urgency=low
 
   * Conflict y Replaces cdpedia
