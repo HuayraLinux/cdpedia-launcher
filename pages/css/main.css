@@ -51,10 +51,16 @@ table {
  *
  *
  */ 
+html {
+	width: 900px;
+	height: 506px;
+}
 body {
-	background-color: #eee;
+	width: 900px;
+	height: 506px;
+	background-color: #000;
 	color: #000;
-	font-family: "FreeSans", sans-serif;
+	font-family: "Asap";
 }
 a:link,
 a:visited,
@@ -67,46 +73,78 @@ a:hover {
 }
 /*WRAPPER*/
 div#wrapper {
-	width: 570px;
-	height: 550px; 
-	margin: 10px 10px 10px;
+	width: 900px;
+	height: 506px; 
+	margin: 0;
 	position: relative;
+	background: url('../img/fondo.png') top left no-repeat;
 }
 /*CONTENT*/
 div#content {
-	margin: 10px 40px 40px;
+	position: absolute;
+	width: 540px;
+	height: 235px;
+	color: white;
+	right: 0;
+	margin: 35px 15px 40px;
 	padding: 15px;
+	text-align: justify;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 15px;
 }
 div#content p {
-	font-size: 1.0em;
-	line-height: 1.3em;
+	color: #ddd;
+	font-size: 0.95em;
+	line-height: 1.2em;
 }
+
+div#content a {
+	color: #fff;
+}
+
+div#content ul {
+	font-size: 0.95em;
+	padding-left: 15px;
+}
+
+div#content ul li {
+	margin: 0;
+	padding: 10px 0 10px 0;
+}
+
+div#signo {
+	display: block;
+	width: 70px;
+	height: 151px;
+	background: url('../img/signo.png') top left no-repeat;
+	position: absolute;
+	top: 259px;
+	left: 425px;
+}
+
 /*NAVIGATION*/
 div#navigation {
 	position: absolute;
 	bottom: 20;
 	height: 30px;
-	width: 430px;
-	margin-left: 50px;
+	width: 70px;
+	margin-left: 20px;
 }
 div#navigation input {
-	border: 1px #ccc solid;
-	background: #DFDEDD;
+	color: #333;
+	border: 1px #888 solid;
+	background: #e5e5e5;
 	text-transform: uppercase;
 	padding: 5px 10px;
 	font-weight: bold;
 	font-size: 0.7em;
 	border-radius: 5px;
-	box-shadow: /*http://stackoverflow.com/a/5768541*/
-	0 1px 2px #fff, /*bottom external highlight*/
-	0 -1px 1px #666, /*top external shadow*/ 
-	inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
-	inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
 }
 div#navigation input:hover {
-	border: 1px #ccc solid;
-	background: #fff;
+	border: 1px #15919c solid;
+	background: #07c0d1;
 	cursor: pointer;
+	color: #ddd;
 }
 
 input#close {
