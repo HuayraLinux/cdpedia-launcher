@@ -1,3 +1,9 @@
+cdpedia-launcher (1.4) torbellino; urgency=medium
+
+  * Fix en link de descarga para que use browser por defecto.
+
+ -- Iván Hoffmann <digital.h@gmail.com.ar>  Tue, 15 Mar 2016 11:14:11 -0300
+
 cdpedia-launcher (1.3) unstable; urgency=low
 
   * Nueva estetica 
